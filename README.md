@@ -27,7 +27,7 @@ cd vanilla-html-example
 netlify dev
 ```
 
-and develop away! use `netlify functions:create` to scaffold new functions as needed
+and develop away! use `netlify functions:create` new functions as needed
 
 To deploy:
 
