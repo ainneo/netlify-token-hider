@@ -1,11 +1,6 @@
-## What this is
+# What this is
 
 this shows how to use netlify with just plain html js and css, together with netlify functions.
-
-## How to use (1 click)
-
-Click this to fork and deploy
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/netlify-labs/vanilla-html-example)
 
 ## How to use (Manual)
 
@@ -19,28 +14,53 @@ Make sure you have the latest CLI version:
 npm i -g netlify-cli
 ```
 
-then:
+Deploy on locahost:8888
 
 ```
-git clone https://github.com/netlify-labs/vanilla-html-example # or clone your own fork of this repo
-cd vanilla-html-example
 netlify dev
 ```
 
 and develop away! use `netlify functions:create` new functions as needed
 
-To deploy:
-
+To deploy for a new site:
 ```
 netlify init
 # optionally do a preview deploy: netlify deploy
 # or straight to prod: netlify deploy --prod
 ```
 
-If you have an existing Netlify instance you want this code to take over, use `netlify link` instead.
+If you have an existing Netlify site use `netlify link` instead.
 
 You can check your login status with `netlify status`, and also check out the [browser extension](https://chrome.google.com/webstore/detail/netlify-browser-extension/dkhfpnphbcckigklfkaemnjdmghhcaoh?hl=en-US) and [menubar app](https://github.com/stefanjudis/netlify-menubar).
 
-## How to scaffold new functions, for example add a token-hider to hide API keys
+## How to write new functions, for example add a token-hider to hide API keys
 
 Watch this 7 minute video: https://youtu.be/gWIK_QHyuWs
+
+
+### Recap
+* fork/clone repo
+* upload to git and netlify
+* make sure you have netlify CLI
+    * you can use `netlify link` to link netlify to remote directory
+    * to hide token, create a new token function: run ```netlify functions:create```
+    * pick a template, options given in the terminal
+    * this generates a token hider package/modules with function
+
+
+### Netlify files 
+* .netlify - Before using Netlify Dev, you must authenticate and make sure your site is linked to a Netlify siteID
+    * state.json - has the siteID
+* functions - folder is the backend for netlify
+    * This is where netlify templates get downloaded via the CLI
+* netlify.toml - netlify configs
+* gitignore - has netlify configs
+
+
+### Misc Notes
+If you ping the backend, you will get a 500 error if you are working on th local server.
+To see if the backend is working with your front, please push to github and view changes on the live site.
+
+
+
+
