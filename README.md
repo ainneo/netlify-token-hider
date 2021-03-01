@@ -42,25 +42,35 @@ Watch this 7 minute video: https://youtu.be/gWIK_QHyuWs
 * fork/clone repo
 * upload to git and netlify
 * make sure you have netlify CLI
-    * you can use `netlify link` to link netlify to remote directory
-    * to hide token, create a new token function: run ```netlify functions:create```
-    * pick a template, options given in the terminal
-    * this generates a token hider package/modules with function
+* use `netlify link` to link netlify to remote directory
+* to hide token, create a new token function: run ```netlify functions:create```
+* pick a template - options available in the terminal
+* after picking a template, the template is generated inside a functions folder
 
 
 ### Netlify files 
-* .netlify - Before using Netlify Dev, you must authenticate and make sure your site is linked to a Netlify siteID
-    * state.json - has the siteID
+* .netlify - before using netlify dev, you must authenticate, make sure your site is linked to a Netlify siteID located in the state.json
 * functions - folder is the backend for netlify
-    * This is where netlify templates get downloaded via the CLI
+    * This is where netlify templates get downloaded to
 * netlify.toml - netlify configs
 * gitignore - has netlify configs
 
 
-### Misc Notes
-If you ping the backend, you will get a 500 error if you are working on th local server.
-To see if the backend is working with your front, please push to github and view changes on the live site.
+### How to add your token/keys
+To add keys/token (do not add them in the functions file):
+    * Go to your netlify site settings
+        * Go to Build & Deploy
+            * Inside of Environment define your values
+In token-hide.js:
+    * configure template to make your api call
+In your browser:
+    * go to: http://localhost:8888/.netlify/functions/token-hider
+        * check your network tabs for 200 status 
+        * now your keys should be hidden from the network tab/front-end
 
+### API call
+Add headers to get only json data, and not all of the html:
+{headers: {Accept: "application/json"}
 
 
 
