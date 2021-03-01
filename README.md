@@ -58,15 +58,15 @@ Watch this 7 minute video: https://youtu.be/gWIK_QHyuWs
 
 ### How to add your token/keys
 To add keys/token (do not add them in the functions file):
-    * Go to your netlify site settings
-        * Go to Build & Deploy
-            * Inside of Environment define your values
+* Go to your netlify site settings
+   * Go to Build & Deploy
+       * Inside of Environment define your values
 In token-hide.js:
-    * configure template to make your api call
+* configure template to make your api call
 In your browser:
-    * go to: http://localhost:8888/.netlify/functions/token-hider
-        * check your network tabs for 200 status 
-        * now your keys should be hidden from the network tab/front-end
+* go to: http://localhost:8888/.netlify/functions/token-hider
+  * check your network tabs for 200 status 
+  * now your keys should be hidden from the network tab/front-end
 
 ### API call
 Add headers to get only json data, and not all of the html:
