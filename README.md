@@ -60,7 +60,7 @@ Watch this 7 minute video: https://youtu.be/gWIK_QHyuWs
 To add keys/token (do not add them in the functions file):
 * Go to your netlify site settings
    * Go to Build & Deploy
-       * Inside of Environment define your values
+   * Inside of Environment define your values
 In token-hide.js:
 * configure template to make your api call
 In your browser:
